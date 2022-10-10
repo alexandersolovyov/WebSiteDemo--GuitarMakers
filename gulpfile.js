@@ -30,7 +30,7 @@ gulp.task('css', function() {
 });
 
 gulp.task('server', function(done) {
-  return gulp.src('dist')
+  stream = gulp.src('dist')
     .pipe(webserver({
       livereload: false,
       directoryListing: false,
@@ -44,6 +44,7 @@ gulp.task('server', function(done) {
         next();
       }
   }));
+  return stream;
 });
 
 gulp.task('server-stop', function(done) {
