@@ -47,3 +47,19 @@ table {
 border-collapse: collapse;
   border-spacing: 0;
 }
+
+
+/*===========================================
+ * End reset.css,
+ * Start cuctom styles
+ *===========================================
+ */
+
+@import "tools/fonts";
+
+body {
+  line-height: 1.6;
+  font-size: 1.2em;
+  font-family: $font_base;
+  @include font-weight_base_normal;
+}

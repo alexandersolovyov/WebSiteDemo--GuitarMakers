@@ -1,0 +1,25 @@
+/*
+ * Модуль
+ * main-header
+ */
+
+@import "tools/colors";
+@import "tools/fonts";
+
+.main-header {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  height: 3.4em;
+  background-color: $color_yellow_accent_bg;
+  text-align: right;
+}
+
+.main-header__logo {
+  float: left;
+  margin-top: 0.1em;
+  font-size: 2em;
+  font-family: $font_logo;
+
+}

@@ -1,0 +1,26 @@
+/*
+ * Шрифты.
+ * Используются шрифты Google, загруженные с помощью
+ * параметров тега link.
+ */
+
+/*
+ * Основной шрифт.
+ */
+$font_base: 'Source Sans Pro', sans-serif;
+@mixin font-weight_base_normal {
+  font-weight: 400;
+  font-weight: normal;
+}
+@mixin font-weight_base_bold {
+  font-weight: 700;
+  font-weight: bold;
+}
+
+/*
+ * Шрифт логотипа.
+ * Для этого шрифта font-weight не указывается - он один.
+ */
+$font_logo: 'Marck Script', cursive, sans-serif;
+
+
