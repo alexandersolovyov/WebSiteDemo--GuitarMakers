@@ -9,12 +9,12 @@
  */
 $font_base: 'Source Sans Pro', sans-serif;
 @mixin font-weight_base_normal {
-  font-weight: 400;
   font-weight: normal;
+  font-weight: 400;
 }
 @mixin font-weight_base_bold {
-  font-weight: 700;
   font-weight: bold;
+  font-weight: 700;
 }
 
 /*
