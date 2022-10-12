@@ -1,0 +1,36 @@
+/*
+ * Меню навигации
+ */
+.nav-menu,
+.nav-menu>* {
+  display: inline-block;
+}
+.nav-menu__link {
+  border: 1px dashed $color_yellow_accent_bg;
+  padding: 0.4em 0.6em;
+  color: inherit;
+  text-decoration: underline;
+}
+.nav-menu__link:hover {
+  border-color: $color_black_text;
+}
+
+.is-nav-menu-visible {
+  display: none;
+}
+
+@media screen and (max-width: 1100px) {
+  .nav-menu {
+    display: none;
+    background-color: gray;
+  }
+  .nav-menu>* {
+    display: block;
+  }
+  .nav-menu__link {
+    border-color: gray;
+  }
+  .is-nav-menu-visible {
+    display: block;
+  }
+}

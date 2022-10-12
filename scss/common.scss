@@ -20,4 +20,7 @@
 /*
  * Modules: модули
  */
-@import "modules/main-header"
+/* Мелкие модули */
+@import "modules/nav-menu";
+/* Крупные и составные модули */
+@import "modules/main-header";

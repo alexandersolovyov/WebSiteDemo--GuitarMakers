@@ -1,6 +1,5 @@
 /*
- * Модуль
- * main-header
+ * Заголовок страницы
  */
 
 @import "tools/colors";
@@ -15,11 +14,21 @@
   background-color: $color_yellow_accent_bg;
   text-align: right;
 }
-
+.main-header__content {
+  display: table;
+  height: 100%;
+}
+.main-header__content>* {
+  display: table-cell;
+  vertical-align: middle;
+}
 .main-header__logo {
-  float: left;
-  margin-top: 0.1em;
+  width: 30%;
+  text-align: left;
   font-size: 2em;
   font-family: $font_logo;
-
+}
+.main-header__nav {
+  width: 70%;
+  text-align: right;
 }
