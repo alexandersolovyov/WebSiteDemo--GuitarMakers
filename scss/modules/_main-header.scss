@@ -4,13 +4,16 @@
 
 @import "tools/colors";
 @import "tools/fonts";
+/* Внимание! Есть внешнее управление размерами: */
+@import "tools/sizes";
 
 .main-header {
   position: fixed;
   z-index: 100;
+  width: 100%;
   top: 0;
   left: 0;
-  height: 3.4em;
+  height: $size_height_main-header;
   background-color: $color_yellow_accent_bg;
   text-align: right;
 }

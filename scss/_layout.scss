@@ -1,12 +1,18 @@
+/*
+ * Модули расположения
+ */
+@import "tools/sizes";
+
 .l-section {
-  width: 100%;
   padding-left: 6em;
   padding-right: 6em;
 }
-
 .l-container {
-  max-width: 1208px;
   width: 100%;
+  max-width: 1208px;
   margin-left: auto;
   margin-right: auto;
+}
+.l-page-main {
+  margin-top: $size_height_main-header;
 }
