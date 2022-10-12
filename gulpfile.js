@@ -16,12 +16,12 @@ gulp.task('css', function() {
     // Otherwise change browsers list here:
     //autoprefixer({browsers: ['last 1 version']}),
     autoprefixer(),
-    cssnano()
+    //cssnano()  // eats too many useful properties
   ];
   return gulp.src('./scss/*.scss')
     .pipe(sass({
                errorLogToConsole: true,
-               //outputStyle: 'compress'     // uncomment to turn on compression
+               outputStyle: 'compressed'     // uncomment to turn on compression
     }))
     .pipe(postcss(plugins))
     .pipe(rename({suffix: '.min'}))
