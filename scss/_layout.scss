@@ -9,10 +9,8 @@
 }
 .l-container {
   width: 100%;
-  max-width: 1208px;
+  max-width: $size_width_page;
   margin-left: auto;
   margin-right: auto;
 }
-.l-page-main {
-  margin-top: $size_height_page-header;
-}
+  
