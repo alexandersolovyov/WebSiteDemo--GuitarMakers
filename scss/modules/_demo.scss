@@ -16,3 +16,12 @@
 .demo__text article+article {
   margin-top: 2em;
 }
+
+@media screen and (max-width: 1370px) {
+  .demo__figure {
+    float: none;
+  }
+  .demo__text article {
+    margin-top: 2em;
+  }
+}
