@@ -13,4 +13,10 @@
   margin-left: auto;
   margin-right: auto;
 }
+.l-screen {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+}
   
