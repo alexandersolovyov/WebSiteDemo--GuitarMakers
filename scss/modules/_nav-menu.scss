@@ -6,17 +6,20 @@
   display: inline-block;
 }
 .nav-menu__link {
-  border: 1px dashed $color_yellow_accent_bg;
   padding: 0.4em 0.6em;
   color: inherit;
-  text-decoration: underline;
+  text-decoration: none;
 }
 .nav-menu__link:hover {
-  border-color: $color_black_text;
+  text-decoration: underline;
 }
 
 .is-nav-menu-visible {
   display: none;
+}
+
+.is-nav-menu__link-active {
+  text-decoration: underline;
 }
 
 @media screen and (max-width: 1100px) {
