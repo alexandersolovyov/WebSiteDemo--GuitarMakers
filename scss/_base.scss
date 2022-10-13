@@ -6,6 +6,7 @@
  */
 
 @import "tools/fonts";
+@import "tools/colors";
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -39,6 +40,7 @@ body {
   font-size: 1.2em;
   font-family: $font_base;
   @include font-weight_base_normal;
+  color: $color_black_text;
 }
 ol, ul {
   list-style: none;
