@@ -1,0 +1,24 @@
+/*
+ * Кнопка действия (кнопка со ссылкой)
+ */
+.action-button {
+  border: 2px solid $color_gray_border;
+  border-radius: 5px;
+  background-color: $color_orange_action_bg;
+  color: $color_black_text;
+  font-size: 0.8em;
+  @include font-weight_base_bold;
+}
+.action-button:active {
+  border: inset $color_white_text;
+  background-color: $color_yellow_accent_bg;
+}
+.action-button>a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  padding: 0.6em 4em;
+  text-decoration: none;
+  font-weight: inherit;
+  color: inherit;
+}
