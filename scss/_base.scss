@@ -56,4 +56,17 @@ border-collapse: collapse;
   border-spacing: 0;
 }
 
+h2,h3 {
+  @include font-weight_base_bold;
+}
+h2 {
+  font-size: 1.8em;
+  margin-top: 1.4em;
+  margin-bottom: 0.8em;
+}
+h3 {
+  margin-top: 1.2em;
+  margin-bottom: 0.5em;
+  font-size: 1.4em;
+}
 
