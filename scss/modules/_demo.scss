@@ -1,0 +1,18 @@
+/*
+ * Блок страницы: "Демонстрация"
+ */
+.demo__figure {
+  float: left; 
+  margin-right: 4em;
+}
+.demo__text ul {
+  list-style: inside;
+  list-style-type: disc;
+}
+.demo__text h3 {
+  margin-top: 0;
+  line-height: 1;
+}
+.demo__text article+article {
+  margin-top: 2em;
+}
