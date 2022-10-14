@@ -5,9 +5,15 @@
   float: left; 
   margin-right: 4em;
 }
-.demo__text ul {
-  list-style: inside;
-  list-style-type: disc;
+.demo__text li:before {
+  display: inline;
+  margin-right: 0.4em;
+  font-size: 0.8em;
+  content: '\e802';
+  font-family: "icons";
+  font-style: normal;
+  font-weight: normal;
+  speak: never;
 }
 .demo__text h3 {
   margin-top: 0;
