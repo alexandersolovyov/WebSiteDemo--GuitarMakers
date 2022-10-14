@@ -1,0 +1,22 @@
+/*
+ * "Преимущество" для списка преимуществ.
+ */
+.feature {
+  position: relative;
+}
+.feature+feature {
+  margin-top: 2em;
+}
+.feature__icon {
+  position: absolute;
+  left: 0;
+  top: 0.18em;
+  font-size: 3em;
+}
+.feature__text {
+  margin-left: 5em;
+}
+.feature__text {
+  margin-top: 0;
+  margin-bottom: 0;
+}
