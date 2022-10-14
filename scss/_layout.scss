@@ -42,16 +42,18 @@
  */
 .l-grid__col {
   display: inline-block;
+  vertical-align: top;
   width: 50%;
+  padding: 0.4em;
 }
-/* Увеличение экрана более 1020px - 4 колонки: */
-@media screen and (min-width: 1020px) {
+/* Увеличение экрана более 1400px - 4 колонки: */
+@media screen and (min-width: 1400px) {
   .l-grid__col {
     width: 25%;
   }
 }
-/* Уменьшение экрана до менее 720px - 1 колонка: */
-@media screen and (max-width: 720px) {
+/* Уменьшение экрана до менее 780px - 1 колонка: */
+@media screen and (max-width: 780px) {
   .l-grid__col {
     width: 100%;
   }

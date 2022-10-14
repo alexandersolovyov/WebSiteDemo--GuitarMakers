@@ -1,0 +1,23 @@
+/*
+ * Карточка цены
+ */
+@import "tools/fonts";
+@import "tools/colors";
+
+.price-card {
+  min-height: 14em;
+  border-radius: 8px;
+  background: $color_gray_bg;
+  padding: 1em;
+}
+.price-card__header {
+  margin-top: none;
+}
+.price-card__price {
+  display: inline-block;
+  border-radius: 8px;
+  padding: 0 0.4em;
+  font-size: 1.2em;
+  background: $color_white_text;
+  @include font-weight_base_bold;
+}
