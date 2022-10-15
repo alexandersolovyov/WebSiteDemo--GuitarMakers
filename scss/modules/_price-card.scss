@@ -11,10 +11,13 @@
   padding: 1em;
 }
 .price-card__header {
-  margin-top: none;
+  margin-top: 0;
+  margin-bottom: 0.6em;
+  line-height: 1.2;
 }
 .price-card__price {
   display: inline-block;
+  margin-top: 0.6em;
   border-radius: 8px;
   padding: 0 0.4em;
   font-size: 1.2em;
