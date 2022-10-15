@@ -35,6 +35,14 @@ footer, header, hgroup, menu, nav, section {
   display: block;
   box-sizing: border-box;
 }
+label {
+  display: inline-block;
+  box-sizing: border-box;
+}
+/* Fix form input elements */
+input, select, textarea, button {
+  box-sizing: border-box;
+}
 body {
   line-height: 1.6;
   font-size: 1.2em;
