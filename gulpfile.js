@@ -11,6 +11,9 @@ var cssnano = require('cssnano');
 var webserver = require('gulp-webserver');
 var http = require('http');
 
+/*
+ * Build CSS - for Release
+ */
 gulp.task('css', function() {
   var plugins = [
     // Using .browserslistrc file.
@@ -29,6 +32,18 @@ gulp.task('css', function() {
     //.on('error', console.error.bind(console)) // error output to console
     .pipe(gulp.dest('./dist/css/'));
 });
+/*
+ * Build CSS - for Development
+ */
+gulp.task('dev-css', function() {
+  return gulp.src('./scss/*.scss')
+    .pipe(sass({
+               errorLogToConsole: true,
+    }))
+    .pipe(rename({suffix: '.min'}))
+    //.on('error', console.error.bind(console)) // error output to console
+    .pipe(gulp.dest('./dist/css/'));
+});
 
 gulp.task('html', function() {
   return gulp.src('./html/*.html')
@@ -36,6 +51,11 @@ gulp.task('html', function() {
     .pipe(gulp.dest('./dist'));
 });
 
+/*====================
+ * Web server
+ *====================
+ */
+// Start web server for development or testing
 gulp.task('server', function(done) {
   stream = gulp.src('dist')
     .pipe(webserver({
@@ -53,9 +73,19 @@ gulp.task('server', function(done) {
   }));
   return stream;
 });
-
+// Stop web server
 gulp.task('server-stop', function(done) {
   http.request('http://localhost:8000/_kill_')
     .on('close', done)
     .end();
 });
+
+/*================================
+ * Main tasks (composite)
+ *================================
+ */
+// Build for development
+gulp.task('build', gulp.parallel(['dev-css', 'html']));
+//Full build for release
+gulp.task('release', gulp.parallel(['css', 'html']));
+
