@@ -2,6 +2,7 @@
 var gulp = require('gulp');
 var rename = require('gulp-rename');
 var sass = require('gulp-sass')(require('sass'));
+var htmlmin = require('gulp-htmlmin');
 // PostCSS and its plugins:
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
@@ -27,6 +28,12 @@ gulp.task('css', function() {
     .pipe(rename({suffix: '.min'}))
     //.on('error', console.error.bind(console)) // error output to console
     .pipe(gulp.dest('./dist/css/'));
+});
+
+gulp.task('html', function() {
+  return gulp.src('./html/*.html')
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('server', function(done) {
