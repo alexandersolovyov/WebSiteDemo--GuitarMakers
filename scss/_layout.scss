@@ -77,3 +77,13 @@
   }
 }
   
+/*
+ * Установка расстояний для сетки ценников
+ */
+$price_cards-gap: 0.8em;
+.l-price-cards-gap {
+  margin-right: -$price_cards-gap;
+}
+.l-price-cards-gap__cell {
+  margin: 0 $price_cards_gap $price_cards_gap 0;
+}
