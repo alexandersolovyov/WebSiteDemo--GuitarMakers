@@ -1,0 +1,32 @@
+/*
+ * "Подвал" сайта
+ */
+@import "tools/colors";
+
+.page-footer {
+  position: relative;
+  background: $color_black_text;
+  color: $color_white_text;
+}
+.page-footer__container {
+  position: relative;
+  height: 100%;
+}
+.page-footer__contacts {
+  padding-top: 3em;
+  padding-bottom: 3.4em;
+  text-align: center;
+  font-size: 1.2em;
+  line-height: 2;
+}
+.page-footer__contacts>* {
+  display: inline-block;
+}
+.page-footer__copy {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-top: 2px solid $color_gray_border;
+  color: $color_gray_border;
+}
