@@ -22,3 +22,8 @@
   font-weight: inherit;
   color: inherit;
 }
+
+.action-button_form {
+  @extend .action-button;
+  padding: 0.4em 2em;
+}
