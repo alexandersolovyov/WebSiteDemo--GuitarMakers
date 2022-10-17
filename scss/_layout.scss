@@ -57,25 +57,25 @@
 }
 /* Увеличение экрана более 1400px - 4 колонки: */
 @media screen and (min-width: 1400px) {
-  .l-grid__lg-col {
+  .l-grid__col-lg {
     width: 25%;
   }
-  .l-grid__lg-col2 {
+  .l-grid__col2-lg {
     width: 50%;
   }
-  .l-grid__lg-col4 {
+  .l-grid__col4-lg {
     width: 100%;
   }
 }
 /* Уменьшение экрана до менее 780px - 1 колонка: */
 @media screen and (max-width: 780px) {
-  .l-grid__sm-col {
+  .l-grid__col-sm {
     width: 25%;
   }
-  .l-grid__sm-col2 {
+  .l-grid__col2-sm {
     width: 50%;
   }
-  .l-grid__sm-col4 {
+  .l-grid__col4-sm {
     width: 100%;
   }
 }
