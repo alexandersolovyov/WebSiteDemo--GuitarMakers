@@ -219,27 +219,30 @@
           <form id="form" class="l-mail-form">
             <div class="l-grid l-mail-form__grid">
               <div class="l-grid__col2 l-grid__sm-col4">
-                <span class="form-input l-mail-form__grid-cell">
+                <span class="l-mail-form__grid-cell">
                   <label for="client-name" required="required">Имя (обязательно)</label>
-                  <input type="text" id="client-name" name="client-name" placeholder="Ваше имя" />
+                  <input type="text" id="client-name" name="client-name"
+                          placeholder="Ваше имя" class="form-input"/>
                 </span>
               </div>
               <div class="l-grid__col2 l-grid__sm-col4">
-                <span class="form-input l-mail-form__grid-cell">
+                <span class="l-mail-form__grid-cell">
                   <label for="email">Электронная почта (обязательно)</label>
-                  <input type="email" id="email" name="email" required="required" placeholder="E-mail" />
+                  <input type="email" id="email" name="email" required="required"
+                          placeholder="E-mail" class="form-input"/>
                 </span>
               </div>
               <div class="l-grid__col2 l-grid__sm-col4">
-                <span class="form-input l-mail-form__grid-cell">
+                <span class="l-mail-form__grid-cell">
                   <label for="phone">Телефон</label>
-                  <input type="tel" id="phone" name="phone" placeholder="Номер телефона" />
+                  <input type="tel" id="phone" name="phone"
+                          placeholder="Номер телефона" class="form-input"/>
                 </span>
               </div>
               <div class="l-grid__col2 l-grid__sm-col4">
-                <span class="form-input l-mail-form__grid-cell">
+                <span class="l-mail-form__grid-cell">
                   <label for="guitar-type">Что Вы хотите заказать?</label>
-                  <select id="guitar-type" name="guitar-type">
+                  <select for="guitar-type" class="form-input">
                     <option value="nothing" selected="selected">Хочу задать вопрос</option>
                     <option value="repair">Реставрация гитары</option>
                     <option value="classic">Классическая гитара</option>
@@ -250,7 +253,9 @@
               </div>
               <div class="mail-form__block">
                 <label for="comment">Сообщение (обязательно)</label>
-                <textarea id="comment" name="comment" required="required" placeholder="Напишите что-нибудь здесь"></textarea>
+                <textarea id="comment" name="comment" required="required"
+                          placeholder="Напишите что-нибудь здесь"
+                          class="form-input_textarea"></textarea>
               </div>
             </div>
             <div class="l-middle-text">
