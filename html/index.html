@@ -216,34 +216,46 @@
         </section>
         <section class="l-screen">
           <h2>Задайте вопрос или оставьте заявку</h2>
-          <form id="form" class="l-grid mail-form">
-            <span class="mail-form__span l-grid__col2 l-grid__sm-col4">
-              <label for="client-name" required="required">Имя (обязательно)</label>
-              <input type="text" id="client-name" name="client-name" placeholder="Ваше имя" />
-            </span>
-            <span class="mail-form__span l-grid__col2 l-grid__sm-col4">
-              <label for="email">Электронная почта (обязательно)</label>
-              <input type="email" id="email" name="email" required="required" placeholder="E-mail" />
-            </span>
-            <span class="mail-form__span l-grid__col2 l-grid__sm-col4">
-              <label for="phone">Телефон</label>
-              <input type="tel" id="phone" name="phone" placeholder="Номер телефона" />
-            </span>
-            <span class="mail-form__span l-grid__col2 l-grid__sm-col4">
-              <label for="guitar-type">Что Вы хотите заказать?</label>
-              <select id="guitar-type" name="guitar-type">
-                <option value="nothing" selected="selected">Хочу задать вопрос</option>
-                <option value="repair">Реставрация гитары</option>
-                <option value="classic">Классическая гитара</option>
-                <option value="acoustic">Акустическая гитара</option>
-                <option value="semi-acoustic">Электро-акустическая гитара</option>
-              </select>
-            </span>
-            <div class="mail-form__block">
-              <label for="comment">Сообщение (обязательно)</label>
-              <textarea id="comment" name="comment" required="required" placeholder="Напишите что-нибудь здесь"></textarea>
+          <form id="form" class="l-mail-form">
+            <div class="l-grid l-mail-form__grid">
+              <div class="l-grid__col2 l-grid__sm-col4">
+                <span class="form-input l-mail-form__grid-cell">
+                  <label for="client-name" required="required">Имя (обязательно)</label>
+                  <input type="text" id="client-name" name="client-name" placeholder="Ваше имя" />
+                </span>
+              </div>
+              <div class="l-grid__col2 l-grid__sm-col4">
+                <span class="form-input l-mail-form__grid-cell">
+                  <label for="email">Электронная почта (обязательно)</label>
+                  <input type="email" id="email" name="email" required="required" placeholder="E-mail" />
+                </span>
+              </div>
+              <div class="l-grid__col2 l-grid__sm-col4">
+                <span class="form-input l-mail-form__grid-cell">
+                  <label for="phone">Телефон</label>
+                  <input type="tel" id="phone" name="phone" placeholder="Номер телефона" />
+                </span>
+              </div>
+              <div class="l-grid__col2 l-grid__sm-col4">
+                <span class="form-input l-mail-form__grid-cell">
+                  <label for="guitar-type">Что Вы хотите заказать?</label>
+                  <select id="guitar-type" name="guitar-type">
+                    <option value="nothing" selected="selected">Хочу задать вопрос</option>
+                    <option value="repair">Реставрация гитары</option>
+                    <option value="classic">Классическая гитара</option>
+                    <option value="acoustic">Акустическая гитара</option>
+                    <option value="semi-acoustic">Электро-акустическая гитара</option>
+                  </select>
+                </span>
+              </div>
+              <div class="mail-form__block">
+                <label for="comment">Сообщение (обязательно)</label>
+                <textarea id="comment" name="comment" required="required" placeholder="Напишите что-нибудь здесь"></textarea>
+              </div>
             </div>
-            <input type="submit" id="submit" .mail-form__button/>
+            <div class="l-middle-text">
+              <input type="submit" id="submit" class="mail-form__button"/>
+            </div>
           </form>
         </section>
       </div>

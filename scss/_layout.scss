@@ -43,6 +43,9 @@
   display: inline-block;
   vertical-align: top;
 }
+[class*="l-grid__col"]>* {
+  display: block;
+}
 .l-grid__col {
   width: 25%;
 }
@@ -82,8 +85,21 @@
  */
 $price_cards-gap: 0.8em;
 .l-price-cards-gap {
-  margin-right: -$price_cards-gap;
+  margin-right: -$price_cards_gap;
 }
 .l-price-cards-gap__cell {
   margin: 0 $price_cards_gap $price_cards_gap 0;
+}
+
+/*
+ * Форма отправки сообщения
+ */
+$mail_form_gap_vert: 0.8em;
+$mail_form_gap_hor: 1.2em;
+/* Установка расстояний для сетки */
+.l-mail-form__grid {
+  margin-right: -$mail_form_gap_hor;
+}
+.l-mail-form__grid-cell {
+  margin: 0 $mail_form_gap_hor $mail_form_gap_vert 0;
 }
