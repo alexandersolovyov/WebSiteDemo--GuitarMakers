@@ -1,6 +1,7 @@
 // jshint esversion:6
 var gulp = require('gulp');
 var rename = require('gulp-rename');
+var clean = require('gulp-clean');
 var sass = require('gulp-sass')(require('sass'));
 var htmlmin = require('gulp-htmlmin');
 var changed = require('gulp-changed');
@@ -84,6 +85,14 @@ gulp.task('image-resize', function() {
                     suffix: '-800x530'
     }))
     .pipe(gulp.dest('dist/images'));
+});
+/*======================
+ * Clean up dist folder
+ *======================
+ */
+gulp.task('clean', function(done) {
+  return gulp.src(['dist/{images,css}/*', 'dist/*.html'])
+  .pipe(clean());
 });
 /*====================
  * Web server
