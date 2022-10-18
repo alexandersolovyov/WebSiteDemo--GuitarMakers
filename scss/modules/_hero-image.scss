@@ -13,13 +13,13 @@
   height: 26em;
   height: 100vh;
   /* Следующие 2 параметра должны быть равны размеру изображения */
-  max-width: 1920px;
-  max-height: 1272px;
+  max-width: 800px;
+  max-height: 530px;
   min-height: 18em;
-  background-image: url("../images/guitar_black-bg-1920x1272.jpg");
-  background: linear-gradient(to bottom, rgba(0,0,0,0.3),
+  background-image: url("../images/guitar_shaded_bg-800x530.jpg");
+  /*background: linear-gradient(to bottom, rgba(0,0,0,0.3),
                               rgba(0,0,0,1)),
-              url("../images/guitar_black-bg-1920x1272.jpg");
+              url("../images/guitar_black-bg-1920x1272.jpg"); */
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -37,4 +37,13 @@
 .hero-image__content>p {
   margin-top: 0.8em;
   margin-bottom: 1.2em;
+}
+/* Для больших экранов */
+@media screen and (min-width: 1100px) {
+  .hero-image__image {
+    max-width: 1920px;
+    max-height: 1272px;
+    background-image:
+    url("../images/guitar_shaded_bg-1920x1272.jpg");
+  }
 }
