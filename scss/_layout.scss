@@ -4,12 +4,12 @@
 @import "tools/sizes";
 
 .l-section {
-  padding-left: 6em;
-  padding-right: 6em;
+  padding-left: 2em;
+  padding-right: 2em;
 }
 .l-container {
   width: 100%;
-  max-width: $size_width_page;
+  max-width: $size_min_content_width;
   margin-left: auto;
   margin-right: auto;
 }
