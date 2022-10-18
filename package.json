@@ -12,8 +12,12 @@
   "devDependencies": {
     "autoprefixer": "^10.4.12",
     "cssnano": "^5.1.13",
+    "del": "^7.0.0",
     "gulp": "^4.0.2",
+    "gulp-changed": "^4.0.3",
+    "gulp-gm": "^0.0.9",
     "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "7.1.0",
     "gulp-postcss": "^9.0.1",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^5.1.0",

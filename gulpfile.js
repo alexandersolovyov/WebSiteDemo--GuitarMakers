@@ -1,19 +1,25 @@
-
+// jshint esversion:6
 var gulp = require('gulp');
 var rename = require('gulp-rename');
 var sass = require('gulp-sass')(require('sass'));
 var htmlmin = require('gulp-htmlmin');
+var changed = require('gulp-changed');
 // PostCSS and its plugins:
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 var cssnano = require('cssnano');
-// Web server and HTTP
+// Web server and HTTP:
 var webserver = require('gulp-webserver');
 var http = require('http');
+// Images processing:
+var gm = require('gulp-gm');
+var imagemin = require('gulp-imagemin');
 
-/*
- * Build CSS - for Release
+/*=======================
+ * HTML and CSS
+ *=======================
  */
+// Build CSS - for Release
 gulp.task('css', function() {
   var plugins = [
     // Using .browserslistrc file.
@@ -32,9 +38,7 @@ gulp.task('css', function() {
     //.on('error', console.error.bind(console)) // error output to console
     .pipe(gulp.dest('./dist/css/'));
 });
-/*
- * Build CSS - for Development
- */
+// Build CSS - for Development
 gulp.task('dev-css', function() {
   return gulp.src('./scss/*.scss')
     .pipe(sass({
@@ -45,12 +49,42 @@ gulp.task('dev-css', function() {
     .pipe(gulp.dest('./dist/css/'));
 });
 
+// Build HTML
 gulp.task('html', function() {
   return gulp.src('./html/*.html')
     .pipe(htmlmin({ collapseWhitespace: true }))
     .pipe(gulp.dest('./dist'));
 });
 
+/*====================
+ * Images, pictures
+ *====================
+ */
+// Must be called before all other 'bg-image-xx' tasks
+gulp.task('image-recode', function() {
+  return gulp.src('raw-images/guitar_shaded_bg-1920x1272.png')
+    //Ensure files that are the same don't get re-converted
+    //.pipe(changed('dist/images'))
+    .pipe(gm(function(gmfile) {
+      return gmfile.setFormat('jpg');
+    }))
+    .pipe(imagemin())
+    .pipe(gulp.dest('dist/images'));
+});
+gulp.task('image-resize', function() {
+  return gulp.src('dist/images/guitar_shaded_bg-1920x1272.jpg')
+    //Ensure files that are the same don't get re-converted
+    //.pipe(changed('dist/images'))
+    .pipe(gm(function(gmfile) {
+      return gmfile.resize(800, 530).setFormat('jpg');
+    }))
+    .pipe(imagemin())
+    .pipe(rename({
+                    basename: 'guitar_shaded_bg',
+                    suffix: '-800x530'
+    }))
+    .pipe(gulp.dest('dist/images'));
+});
 /*====================
  * Web server
  *====================
@@ -84,8 +118,10 @@ gulp.task('server-stop', function(done) {
  * Main tasks (composite)
  *================================
  */
+// Make images
+gulp.task('images', gulp.series(['image-recode', 'image-resize']));
 // Build for development
 gulp.task('build', gulp.parallel(['dev-css', 'html']));
 //Full build for release
-gulp.task('release', gulp.parallel(['css', 'html']));
+gulp.task('release', gulp.parallel(['css', 'html', 'images']));
 
