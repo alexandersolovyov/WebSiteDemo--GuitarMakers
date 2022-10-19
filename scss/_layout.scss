@@ -3,6 +3,9 @@
  */
 @import "tools/sizes";
 
+/*
+ * Основные размеры страницы
+ */
 .l-section {
   padding-left: 2em;
   padding-right: 2em;
@@ -13,6 +16,19 @@
   margin-left: auto;
   margin-right: auto;
 }
+@media screen and (min-width: 1200px) {
+  .l-section {
+    padding-left: 6em;
+    padding-right: 6em;
+  }
+  .l-container {
+    max-width: $size_min_content_width_wide;
+  }
+}
+
+/*
+ * Вспомогательные модули
+ */
 .l-screen {
   display: flex;
   min-height: 100vh;

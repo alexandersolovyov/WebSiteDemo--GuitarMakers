@@ -82,3 +82,16 @@ h3 {
   font-size: 1.4em;
 }
 
+/*
+ * Для больших экранов
+ */
+@media screen and (min-width: 1200px) {
+  body {
+    font-size: 1.4em;
+  }
+}
+@media screen and (min-width: 2200px) {
+  body {
+    font-size: 1.6em;
+  }
+}
