@@ -9,13 +9,13 @@
 .nav-menu__button {
   display: inline-block;
   border: none;
-  background: inherit;
+  background: $color_yellow_accent_bg;
   font-size: 1.6em;
   cursor: pointer;
 }
 .nav-menu__button>* {
   display: inline-block;
-  padding: 0.3em;
+  padding: 0.2em;
 }
 .nav-menu__list {
   position: absolute;
