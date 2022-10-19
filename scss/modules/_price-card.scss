@@ -5,6 +5,7 @@
 @import "tools/colors";
 
 .price-card {
+  position: relative;
   min-height: 14em;
   border-radius: 8px;
   background: $color_gray_bg;
@@ -16,11 +17,33 @@
   line-height: 1.2;
 }
 .price-card__price {
+  position: absolute;
   display: inline-block;
-  margin-top: 0.6em;
+  bottom: 1em;
   border-radius: 8px;
   padding: 0 0.4em;
   font-size: 1.2em;
   background: $color_white_text;
   @include font-weight_base_bold;
+}
+
+/*
+ * Увеличение экрана
+ */
+/* 2 колонки */
+@media screen and (min-width: 1200px) {
+  .price-card {
+    min-height: 12em;
+  }
+}
+/* 4 колонки */
+@media screen and (min-width: 1400px) {
+  .price-card {
+    min-height: 17em;
+  }
+}
+@media screen and (min-width: 1800px) {
+  .price-card {
+    min-height: 14em;
+  }
 }
