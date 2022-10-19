@@ -13,11 +13,12 @@
   width: 100%;
   top: 0;
   left: 0;
-  height: $size_height_page-header;
+  height: $size_page_header_height;
   background-color: $color_yellow_accent_bg;
   text-align: right;
 }
 .page-header__content {
+  position: relative;
   display: table;
   height: 100%;
 }

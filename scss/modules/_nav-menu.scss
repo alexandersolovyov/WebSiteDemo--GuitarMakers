@@ -1,21 +1,46 @@
 /*
  * Меню навигации
  */
-.nav-menu,
-.nav-menu>* {
+@import "tools/colors";
+
+.nav-menu {
   display: inline-block;
 }
+.nav-menu__button {
+  display: inline-block;
+  border: none;
+  background: inherit;
+  font-size: 1.6em;
+  cursor: pointer;
+}
+.nav-menu__button>* {
+  display: inline-block;
+  padding: 0.3em;
+}
+.nav-menu__list {
+  position: absolute;
+  display: none;
+  right: 0;
+  top: auto;
+  border: 1px solid $color_gray_border;
+  background: $color_white_bg;
+  text-align: left;
+}
 .nav-menu__link {
-  padding: 0.4em 0.6em;
+  display: block;
+  padding: 0.6em 1.6em 0.6em 1.2em;
   color: inherit;
   text-decoration: none;
+}
+.nav-menu:hover .nav-menu__list {
+  display: block;
 }
 .nav-menu__link:hover {
   text-decoration: underline;
 }
 
 .is-nav-menu-visible {
-  display: none;
+  display: block;
 }
 
 .is-nav-menu__link-active {
@@ -24,18 +49,13 @@
 
 /*
 @media screen and (min-width: 1100px) {
-  .nav-menu {
-    display: none;
-    background-color: gray;
-  }
+  .nav-menu,
   .nav-menu>* {
-    display: block;
+    display: inline-block;
   }
   .nav-menu__link {
-    border-color: gray;
+    margin: 0 1.2em 0 1.2em;
   }
-  .is-nav-menu-visible {
-    display: block;
-  }
+
 }
 */
