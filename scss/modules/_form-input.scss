@@ -18,6 +18,7 @@
   @extend .form-input;
   resize: none;
   font-size: 1em;
+  height: 7.4em;
 }
 /* Увеличение ширины экрана более чем 1400px */
 @media screen and (min-width: 1400px) {
