@@ -48,20 +48,29 @@
 .is-nav-menu-visible {
   display: block;
 }
-
 .is-nav-menu__link-active {
   text-decoration: underline;
 }
 
 /*
-@media screen and (min-width: 1100px) {
-  .nav-menu,
-  .nav-menu>* {
+ * Однострочное меню для широких экранов
+ */
+@media screen and (min-width: 1400px) {
+  .nav-menu__button {
+    display: none;
+  }
+  .nav-menu__list {
+    position: static;
+    display: inline-block;
+    border: none;
+    background: $color_yellow_accent_bg;
+    text-align: right;
+  }
+  .nav-menu__list>* {
     display: inline-block;
   }
   .nav-menu__link {
-    margin: 0 1.2em 0 1.2em;
+    padding: 0;
+    margin: 0 0 0 1.2em;
   }
-
 }
-*/
