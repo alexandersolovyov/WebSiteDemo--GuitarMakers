@@ -20,11 +20,20 @@
   font-size: 1em;
   height: 7.4em;
 }
-/* Увеличение ширины экрана более чем 1400px */
-@media screen and (min-width: 1400px) {
+/* Увеличение ширины экрана */
+@media screen and (min-width: 1500px) {
   .form-input {
     float: right;
-    width: 16em;
+    width: 40%;
+  }
+  .form-input_textarea {
+    float: none;
+    width: 100%;
+  }
+}
+@media screen and (min-width: 1800px) {
+  .form-input {
+    width: 50%;
   }
   .form-input_textarea {
     float: none;
