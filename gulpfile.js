@@ -58,6 +58,23 @@ gulp.task('html', function() {
 });
 
 /*====================
+ * JavaScript
+ *====================
+ */
+gulp.task('js', function () {
+  return gulp.src('javascript/*')
+    .pipe(gulp.dest('dist/js/'));
+});
+/*====================
+ * Fonts
+ *====================
+ */
+gulp.task('fonts', function () {
+  return gulp.src(['fonts/*', '!fonts/*.txt'])
+    .pipe(gulp.dest('dist/fonts/'));
+});
+
+/*====================
  * Images, pictures
  *====================
  */
@@ -91,7 +108,7 @@ gulp.task('image-resize', function() {
  *======================
  */
 gulp.task('clean', function(done) {
-  return gulp.src(['dist/{images,css}/*', 'dist/*.html'])
+  return gulp.src(['dist/{images,css,fonts,js}/*', 'dist/*.html'])
   .pipe(clean());
 });
 /*====================
@@ -130,7 +147,7 @@ gulp.task('server-stop', function(done) {
 // Make images
 gulp.task('images', gulp.series(['image-recode', 'image-resize']));
 // Build for development
-gulp.task('build', gulp.parallel(['dev-css', 'html']));
+gulp.task('build', gulp.parallel(['dev-css', 'html', 'js']));
 //Full build for release
-gulp.task('release', gulp.parallel(['css', 'html', 'images']));
+gulp.task('release', gulp.parallel(['css', 'html', 'images', 'fonts', 'js']));
 
