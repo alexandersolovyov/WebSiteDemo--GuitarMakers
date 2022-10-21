@@ -27,37 +27,52 @@ if (typeof window.site !== 'object') {
       elem.attachEvent("onclick", listener);
     }
   };
-  // Устанавливает-убирает класс для элемента
+  // Устанавливает-убирает класс для элемента,
+  // возвращает true если класс установлен.
   var toggleClass = function (elem, classNam) {
     var i;
     var classes = elem.className.split(' ');
-    var ret = '';
+    var new_class = '';
+    ret = false;
     if (elem.className.indexOf(classNam) < 0) { // добавить класс
-      ret = elem.className;
-      ret = ret + ' ' + classNam;
+      new_class = elem.className;
+      new_class = new_class + ' ' + classNam;
+      ret = true;
     }else { // убрать класс
       for (i in classes) {
         if (classes[i] !== classNam) {
-          ret = ret + classes[i] + ' ';
+          new_class = new_class + classes[i] + ' ';
         }
       }
     }
-    elem.className = ret;
+    elem.className = new_class;
+    return ret;
   };
   site.main = function () {
     // Кнопка главного меню:
     var menuBtn = document.getElementById('nav-menu__button');
     var menu = document.getElementById('nav-menu');
     var navList = document.getElementById('nav-menu__list');
+    var navIcon = document.getElementById('nav-menu__icon');
     menu.className = menu.className.replace('is-nav-menu-hover', '');
     // При клике на кнопке - показывать-прятать меню
+    // и менять иконку кнопки
     addEventListener(menuBtn, 'click', function () {
-      toggleClass(navList, 'is-nav-menu__list-visible');
+      var is_set = toggleClass(navList, 'is-nav-menu__list-visible');
+      if (is_set) {
+        navIcon.className = navIcon.className.replace('icon-menu', 'icon-cancel');
+      }else {
+        navIcon.className = navIcon.className.replace('icon-cancel', 'icon-menu');
+      }
     });
-    // При клике на списке: если список виден (is-nav-menu__list-visible) -
-    // прячем его.
+    // При клике на списке:
+    // -если список виден (is-nav-menu__list-visible) - прячем его;
+    // -меняем иконку обратно на "меню"
     addEventListener(navList, 'click', function () {
       navList.className = navList.className.replace('is-nav-menu__list-visible', '');
+      if (getRealDisplay(menuBtn) !== 'none') { // если кнопка видна
+        navIcon.className = navIcon.className.replace('icon-cancel', 'icon-menu');
+      }
     });
   };
     
