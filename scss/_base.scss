@@ -44,6 +44,9 @@ label {
 input, select, textarea, button {
   box-sizing: border-box;
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   min-width: $size_min_page_width;
   line-height: 1.6;
