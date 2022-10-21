@@ -32,6 +32,13 @@
   font-size: 2em;
   font-family: $font_logo;
 }
+.page-header__logo:hover {
+  text-decoration: underline;
+}
+.page-header__logo a {
+  color: inherit;
+  text-decoration: inherit;
+}
 .page-header__nav {
   width: 80%;
   text-align: right;

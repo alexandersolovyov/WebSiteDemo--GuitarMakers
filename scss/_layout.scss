@@ -30,6 +30,8 @@
  * Вспомогательные модули
  */
 .l-screen {
+  padding-top: $size_page_header_height;
+  padding-bottom: $size_page_header_height;
   display: flex;
   min-height: 100vh;
   flex-direction: column;
