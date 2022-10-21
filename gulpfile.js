@@ -2,8 +2,11 @@
 var gulp = require('gulp');
 var rename = require('gulp-rename');
 var clean = require('gulp-clean');
+var concat = require('gulp-concat');
+
 var sass = require('gulp-sass')(require('sass'));
 var htmlmin = require('gulp-htmlmin');
+var uglify = require('gulp-uglify');
 var changed = require('gulp-changed');
 // PostCSS and its plugins:
 var postcss = require('gulp-postcss');
@@ -61,8 +64,15 @@ gulp.task('html', function() {
  * JavaScript
  *====================
  */
+gulp.task('dev-js', function () {
+  return gulp.src(['javascript/utils.js', 'javascript/main.js'])
+    .pipe(concat('main.js'))
+    .pipe(gulp.dest('dist/js/'));
+});
 gulp.task('js', function () {
-  return gulp.src('javascript/*')
+  return gulp.src(['javascript/utils.js', 'javascript/main.js'])
+    .pipe(concat('main.js'))
+    .pipe(uglify())
     .pipe(gulp.dest('dist/js/'));
 });
 /*====================
@@ -147,7 +157,7 @@ gulp.task('server-stop', function(done) {
 // Make images
 gulp.task('images', gulp.series(['image-recode', 'image-resize']));
 // Build for development
-gulp.task('build', gulp.parallel(['dev-css', 'html', 'js']));
+gulp.task('build', gulp.parallel(['dev-css', 'html', 'dev-js']));
 //Full build for release
 gulp.task('release', gulp.parallel(['css', 'html', 'images', 'fonts', 'js']));
 
