@@ -47,3 +47,16 @@
     min-height: 14em;
   }
 }
+/*
+ * Уменьшение экрана
+ */
+@media screen and (max-width: $size_screen_width_small) {
+  .price-card {
+    min-height: 12em;
+  }
+}
+@media screen and (max-width: $size_screen_width_smaller) {
+  .price-card {
+    min-height: 11em;
+  }
+}

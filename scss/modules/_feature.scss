@@ -30,6 +30,11 @@
     margin-top: 0.6em;
   }
 }
+@media screen and (max-width: $size_screen_width_smaller) {
+  .feature__text {
+    margin-left: 3.4em;
+  }
+}
 @media screen and (max-width: $size_screen_width_smallest) {
   .feature__icon {
     display: none;

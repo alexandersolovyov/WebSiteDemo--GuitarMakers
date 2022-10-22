@@ -31,6 +31,8 @@
     width: 100%;
   }
 }
+
+/* Увеличение экрана */
 @media screen and (min-width: $size_screen_width_bigger) {
   .form-input {
     width: 50%;
@@ -38,5 +40,11 @@
   .form-input_textarea {
     float: none;
     width: 100%;
+  }
+}
+/* Уменьшение экрана */
+@media screen and (max-width: $size_screen_width_smaller) {
+  .form-input_textarea {
+    height: 4.6em;
   }
 }

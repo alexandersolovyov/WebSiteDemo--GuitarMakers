@@ -122,6 +122,7 @@ $price_cards-gap: 0.8em;
  * Форма отправки сообщения
  */
 $mail_form_gap_vert: 0.8em;
+$mail_form_gap_vert_smaller: 0.4em;
 $mail_form_gap_hor: 1.8em;
 $mail_form_gap_hor_big: 2.8em;
 /* Установка расстояний для сетки */
@@ -137,5 +138,14 @@ $mail_form_gap_hor_big: 2.8em;
   }
   .l-mail-form__grid-cell {
     margin: 0 $mail_form_gap_hor_big $mail_form_gap_vert 0;
+  }
+}
+/* Уменьшение экрана */
+@media screen and (max-width: $size_screen_width_smaller) {
+.l-mail-form__grid {
+  margin-right: 0;
+}
+  .l-mail-form__grid-cell {
+    margin: 0 0 $mail_form_gap_vert_smaller 0;
   }
 }
