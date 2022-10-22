@@ -47,3 +47,19 @@
     url("../images/guitar_shaded_bg-1920x1272.jpg");
   }
 }
+/* Для маленьких экранов */
+@media screen and (max-width: $size_screen_width_smaller) {
+  .hero-image__content {
+    padding: 1em;
+  }
+}
+@media screen and (max-width: $size_screen_width_mini) {
+  .hero-image__content {
+    padding: 0;
+  }
+}
+@media screen and (max-width: $size_screen_width_smallest) {
+  .hero-image__content {
+    height: 30em;
+  }
+}
