@@ -14,9 +14,16 @@
   font-size: 3em;
 }
 .feature__text {
-  margin-left: 5em;
-}
-.feature__text {
   margin-top: 0;
   margin-bottom: 0;
+  margin-left: 5em;
+}
+/* Для маленьких экранов */
+@media screen and (max-width: $size_screen_width_smallest) {
+  .feature__icon {
+    display: none;
+  }
+  .feature__text {
+    margin-left: 0;
+  }
 }
