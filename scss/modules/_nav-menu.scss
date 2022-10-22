@@ -77,3 +77,14 @@
     text-decoration: none;
   }
 }
+
+/*
+ * Меню в несколько строк для узких экранов альбомной
+ * ориентации
+ */
+@media screen and (max-height: $size_screen_height_small) {
+  .nav-menu__list>* {
+    display: inline-block;
+    width: 50%;
+  }
+}
