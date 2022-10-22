@@ -28,6 +28,9 @@ window.site = (function () {
     // Рассчитать расположение элементов для навигации
     var anchorPositions = window.utils.getYOffsets(anchorIds);
 
+    // Если элемент меню выделялся - становится true
+    var isMenuHighlighted = false;
+
     // Захватываем элементы меню
     var menuBtn = document.getElementById('nav-menu__button');
     var menu = document.getElementById('nav-menu');
@@ -36,6 +39,18 @@ window.site = (function () {
     // Убрать появление меню по Hover
     menu.className = menu.className.replace('is-nav-menu-hover', '');
 
+    /*========================================
+     * Служебные функции
+     *========================================
+     */
+    /* Функция для выбора ссылки по ИД целевого раздела.
+     * @param section_id - строка-идентификатор раздела-цели для выбираемой
+     * ссылки.
+     * @return DOM element - элемент страницы, ссылка на целевой раздел.
+     */
+    var getRefElement = function (section_id) {
+      return document.getElementById(section_id.replace('-section', '-ref'));
+    };
     /*========================================
      * Функции для вставки в обработку событий
      *========================================
@@ -56,41 +71,41 @@ window.site = (function () {
     };
     // Подсветка пунктов главного меню при прокрутке страницы
     var highlightMainRef = function() {
-      // Функция для выбора ссылки по ИД целевого раздела
-      var get_ref = function (section_id) {
-        return document.getElementById(section_id.replace('-section', '-ref'));
-      };
-      // Класс которым помечаем пункт меню
-      var marker_class = 'is-nav-menu__link-active';
-      // Берём позицию окна
-      var win_pos = window.utils.getWindowOffset();
-      // Начинаем с нижнего раздела-цели.
-      // Если низ экрана ниже его верха - подсвечиваем пункт меню.
-      var is_marked = false; // станет true если один элемент помечен
-      var i = anchorIds.length - 1; // итератор списка якорей
-      var ref_el = get_ref(anchorIds[i]); // нижний элемент страницы
-      if (win_pos.bottom > anchorPositions[anchorIds[i]]) {
-        window.utils.addClass(ref_el, marker_class);
-        is_marked = true; // помечен, остальные якоря только очищаем от метки
-      }else {
-        window.utils.removeClass(ref_el, marker_class);
-      }
-      // Проход по остальным элементам.
-      i -= 1;
-      while (i >= 0) {
-        ref_el = get_ref(anchorIds[i]);
-        if (is_marked) { // уже помечено, дальше только убираем
-          window.utils.removeClass(ref_el, marker_class);
-        // Если верх элемента выше верха окна - подсвечиваем пункт меню.
-        }else if (win_pos.top > (anchorPositions[anchorIds[i]] - 15)) {
+      // Выделяем только на широком экране
+      if (window.utils.getRealDisplay(menuBtn) === 'none') {
+        // Класс которым помечаем пункт меню
+        var marker_class = 'is-nav-menu__link-active';
+        // Берём позицию окна
+        var win_pos = window.utils.getWindowOffset();
+        // Начинаем с нижнего раздела-цели.
+        // Если низ экрана ниже его верха - подсвечиваем пункт меню.
+        var is_marked = false; // станет true если один элемент помечен
+        var i = anchorIds.length - 1; // итератор списка якорей
+        var ref_el = getRefElement(anchorIds[i]); // нижний элемент страницы
+        if (win_pos.bottom > anchorPositions[anchorIds[i]]) {
           window.utils.addClass(ref_el, marker_class);
-          is_marked = true;
-        }else { // если ещё не дошли до совпадения
+          is_marked = true; // помечен, остальные якоря только очищаем от метки
+          isMenuHighlighted = true;
+        }else {
           window.utils.removeClass(ref_el, marker_class);
         }
+        // Проход по остальным элементам.
         i -= 1;
+        while (i >= 0) {
+          ref_el = getRefElement(anchorIds[i]);
+          if (is_marked) { // уже помечено, дальше только убираем
+            window.utils.removeClass(ref_el, marker_class);
+          // Если верх элемента выше верха окна - подсвечиваем пункт меню.
+          }else if (win_pos.top > (anchorPositions[anchorIds[i]] - 15)) {
+            window.utils.addClass(ref_el, marker_class);
+            is_marked = true;
+            isMenuHighlighted = true;
+          }else { // если ещё не дошли до совпадения
+            window.utils.removeClass(ref_el, marker_class);
+          }
+          i -= 1;
+        }
       }
-      console.log('Highlight end');
     };
     /*====================================
      * Слушаем события
@@ -118,7 +133,20 @@ window.site = (function () {
     // При изменении размеров окна рассчитать расположение элементов-целей для
     // навигации
     window.onresize = function () {
-      anchorPositions = window.utils.getYOffsets(anchorIds);
+      // Если кнопка не видна, широкий экран - нужно отмечать элементы меню,
+      // рассчитываем расположение блоков
+      if (window.utils.getRealDisplay(menuBtn) === 'none') {
+        anchorPositions = window.utils.getYOffsets(anchorIds);
+      }else {
+        // Если узкий экран и элементы были помечены - убрать метки
+        if (isMenuHighlighted === true) {
+          for (var i in anchorIds) {
+            window.utils.removeClass(getRefElement(anchorIds[i]),
+                                     'is-nav-menu__link-active');
+          }
+          isMenuHighlighted = false;
+        }
+      }
     };
     // При скролле подсвечиваем пункт меню
     window.onscroll = throttle(highlightMainRef, 100);
