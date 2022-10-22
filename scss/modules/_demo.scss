@@ -1,10 +1,10 @@
 /*
  * Блок страницы: "Демонстрация"
  */
-/*
-.demo__figure {
+.demo__figure,
+.demo__figure>* {
+  width: 100%;
 }
-*/
 .demo__text li:before {
   display: inline;
   margin-right: 0.4em;
@@ -23,7 +23,12 @@
   margin-top: 2em;
 }
 
+/* Увеличение экнана */
 @media screen and (min-width: $size_screen_width_big_plus) {
+  .demo__figure {
+    width: 60%;
+    max-width: 800px;
+  }
   .demo__figure {
     float: left; 
     margin-right: 4em;
@@ -32,3 +37,4 @@
     margin-top: 2em;
   }
 }
+/* Уменьшение экнана */

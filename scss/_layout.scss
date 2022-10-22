@@ -116,11 +116,20 @@ $price_cards-gap: 0.8em;
  * Форма отправки сообщения
  */
 $mail_form_gap_vert: 0.8em;
-$mail_form_gap_hor: 2.8em;
+$mail_form_gap_hor: 1.8em;
+$mail_form_gap_hor_big: 2.8em;
 /* Установка расстояний для сетки */
 .l-mail-form__grid {
   margin-right: -$mail_form_gap_hor;
 }
 .l-mail-form__grid-cell {
   margin: 0 $mail_form_gap_hor $mail_form_gap_vert 0;
+}
+@media screen and (min-width: $size_screen_width_big) {
+  .l-mail-form__grid {
+    margin-right: -$mail_form_gap_hor_big;
+  }
+  .l-mail-form__grid-cell {
+    margin: 0 $mail_form_gap_hor_big $mail_form_gap_vert 0;
+  }
 }
