@@ -1,10 +1,10 @@
 /*
  * Блок страницы: "Демонстрация"
  */
+/*
 .demo__figure {
-  float: left; 
-  margin-right: 4em;
 }
+*/
 .demo__text li:before {
   display: inline;
   margin-right: 0.4em;
@@ -23,9 +23,10 @@
   margin-top: 2em;
 }
 
-@media screen and (max-width: 1370px) {
+@media screen and (min-width: 1370px) {
   .demo__figure {
-    float: none;
+    float: left; 
+    margin-right: 4em;
   }
   .demo__text article {
     margin-top: 2em;
