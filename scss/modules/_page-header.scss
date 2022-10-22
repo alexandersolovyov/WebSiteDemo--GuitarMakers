@@ -43,3 +43,15 @@
   width: 80%;
   text-align: right;
 }
+
+/*
+ * Уменьшение ширины экрана
+ */
+@media screen and (max-width: $size_screen_width_mini) {
+  .page-header {
+    height: $size_page_header_height_small;
+  }
+  .page-header__logo {
+    font-size: 1.6em;
+  }
+}

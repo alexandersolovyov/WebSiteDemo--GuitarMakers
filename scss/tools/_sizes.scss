@@ -2,10 +2,13 @@
  * Широко используемые размеры
  */
 $size_page_header_height: 3.4em;
+$size_page_header_height_small: 2.8em;
+
 $size_min_page_width: 800px;
+
 $size_min_content_width: 960px;
-$size_min_content_width_mobile: 280px;
 $size_min_content_width_wide: 1920px;
+$size_min_content_width_mobile: 200px;
 
 /*
  * Контрольные точки размеров экрана
@@ -20,3 +23,7 @@ $size_screen_width_small: 800px;
 $size_screen_width_smaller: 780px;
 $size_screen_width_mini: 600px;
 $size_screen_width_smallest: 530px;
+$size_screen_width_micro: 360px;
+
+$size_screen_height_small: 600px;
+$size_screen_height_smaller: 400px;

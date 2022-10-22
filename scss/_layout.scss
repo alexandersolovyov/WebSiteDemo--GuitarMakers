@@ -46,6 +46,13 @@
 .l-center-text {
   text-align: center;
 }
+/* Уменьшение экрана */
+@media screen and (max-width: $size_screen_width_mini) {
+  .l-screen {
+    padding-top: $size_page_header_height_small;
+    padding-bottom: 0;
+  }
+}
 
 /*
  * Сетка шириной 4 колонки.

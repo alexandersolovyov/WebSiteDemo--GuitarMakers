@@ -28,3 +28,18 @@
   @extend .action-button;
   padding: 0.4em 2em;
 }
+/*
+ * Маленькие экраны
+ */
+@media screen and (max-width: $size_screen_width_micro) {
+  .action-button {
+    width: 100%;
+  }
+  .action-button>a {
+    padding: 0.6em 1em;
+  }
+  .action-button_form {
+    padding: 0.6em 1.6em;
+    font-size: 1em;
+  }
+}

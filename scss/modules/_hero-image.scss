@@ -61,8 +61,17 @@
     padding: 0;
   }
 }
-@media screen and (max-width: $size_screen_width_smallest) {
+@media screen and (max-width: $size_screen_width_mini)
+              and (max-height: $size_screen_height_smaller) {
+  .hero-image__image {
+    min-height: 11em;
+  }
+}
+@media screen and (max-width: $size_screen_width_micro) {
   .hero-image__content {
-    height: 30em;
+    padding: $size_page_header_height_small 0 1.8em 0;
+  }
+  .hero-image__content>h2 {
+    font-size: 1.4em;
   }
 }

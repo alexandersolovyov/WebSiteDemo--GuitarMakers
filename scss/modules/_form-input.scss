@@ -48,3 +48,11 @@
     height: 4.6em;
   }
 }
+@media screen and (max-width: $size_screen_width_smallest) {
+  .form-input {
+    font-size: 1em;
+  }
+  .form-input_textarea {
+    font-size: 1.1em;
+  }
+}

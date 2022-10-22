@@ -51,3 +51,8 @@
     margin-top: 0;
   }
 }
+@media screen and (max-width: $size_screen_width_micro) {
+  .demo__figure>* {
+    height: 180px;
+  }
+}

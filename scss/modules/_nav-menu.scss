@@ -82,9 +82,34 @@
  * Меню в несколько строк для узких экранов альбомной
  * ориентации
  */
-@media screen and (max-height: $size_screen_height_small) {
+@media screen and (max-height: $size_screen_height_smaller) {
   .nav-menu__list>* {
     display: inline-block;
     width: 50%;
+  }
+}
+@media screen and (max-width: $size_screen_width_mini) {
+  .nav-menu__button {
+    font-size: 1.3em;
+  }
+}
+/*
+ * Меню один столбец для самых маленьких экранов портретной
+ * ориентации
+ */
+@media screen and (max-width: $size_screen_width_micro) {
+  .nav-menu__link {
+    padding-top: 0.4em;
+    padding-bottom: 0.4em;
+  }
+}
+@media screen and (max-width: $size_screen_width_micro)
+              and (max-height: $size_screen_height_smaller) {
+  .nav-menu__list>* {
+    display: block;
+    width: auto;
+  }
+  .nav-menu__list {
+    font-size: 1.1em;
   }
 }

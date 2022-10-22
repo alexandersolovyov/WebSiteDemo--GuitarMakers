@@ -132,3 +132,22 @@ h3 {
     font-size: 1.2em;
   }
 }
+@media screen and (max-width: $size_screen_width_small)
+              and (max-height: $size_screen_height_smaller) {
+  body {
+    font-size: 1.4em;
+    line-height: 1.2;
+  }
+}
+@media screen and (max-width: $size_screen_width_smallest)
+              and (min-height: $size_screen_height_small) {
+  body {
+    font-size: 2em;
+  }
+}
+@media screen and (max-width: $size_screen_width_micro) {
+  body {
+    font-size: 1.2em;
+    line-height: 1.1;
+  }
+}
