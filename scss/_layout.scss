@@ -16,7 +16,7 @@
   margin-left: auto;
   margin-right: auto;
 }
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: $size_screen_width_big) {
   .l-section {
     padding-left: 6em;
     padding-right: 6em;
@@ -77,7 +77,7 @@
   width: 100%;
 }
 /* Увеличение экрана более 1400px - 4 колонки: */
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: $size_screen_width_big_plus) {
   .l-grid__col-lg {
     width: 25%;
   }
@@ -89,7 +89,7 @@
   }
 }
 /* Уменьшение экрана до менее 780px - 1 колонка: */
-@media screen and (max-width: 780px) {
+@media screen and (max-width: $size_screen_width_smaller) {
   .l-grid__col-sm {
     width: 25%;
   }

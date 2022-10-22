@@ -31,18 +31,18 @@
  * Увеличение экрана
  */
 /* 2 колонки */
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: $size_screen_width_big) {
   .price-card {
     min-height: 12em;
   }
 }
 /* 4 колонки */
-@media screen and (min-width: 1400px) {
+@media screen and (min-width: $size_screen_width_big_plus) {
   .price-card {
     min-height: 17em;
   }
 }
-@media screen and (min-width: 1800px) {
+@media screen and (min-width: $size_screen_width_bigger) {
   .price-card {
     min-height: 14em;
   }

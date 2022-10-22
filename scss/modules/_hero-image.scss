@@ -39,7 +39,7 @@
   margin-bottom: 1.2em;
 }
 /* Для больших экранов */
-@media screen and (min-width: 1100px) {
+@media screen and (min-width: $size_screen_width_big) {
   .hero-image__image {
     max-width: 1920px;
     max-height: 1272px;

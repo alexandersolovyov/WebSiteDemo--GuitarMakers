@@ -6,3 +6,16 @@ $size_min_page_width: 800px;
 $size_min_content_width: 960px;
 $size_min_content_width_mobile: 280px;
 $size_min_content_width_wide: 1920px;
+
+/*
+ * Контрольные точки размеров экрана
+ */
+/* Увеличение экрана (@media min-width)*/
+$size_screen_width_big: 1200px;
+$size_screen_width_big_plus: 1400px;
+$size_screen_width_bigger: 1800px;
+$size_screen_width_huge: 2200px;
+/* Уменьшение экрана (@media max-width)*/
+$size_screen_width_small: 800px;
+$size_screen_width_smaller: 780px;
+$size_screen_width_smallest: 530px;

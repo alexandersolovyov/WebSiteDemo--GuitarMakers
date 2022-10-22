@@ -23,7 +23,7 @@
   margin-top: 2em;
 }
 
-@media screen and (min-width: 1370px) {
+@media screen and (min-width: $size_screen_width_big_plus) {
   .demo__figure {
     float: left; 
     margin-right: 4em;
