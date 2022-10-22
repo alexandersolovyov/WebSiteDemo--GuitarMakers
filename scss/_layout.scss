@@ -25,6 +25,12 @@
     max-width: $size_min_content_width_wide;
   }
 }
+@media screen and (max-width: $size_screen_width_mini) {
+  .l-section {
+    padding-left: 1em;
+    padding-right: 1em;
+  }
+}
 
 /*
  * Вспомогательные модули

@@ -19,6 +19,17 @@
   margin-left: 5em;
 }
 /* Для маленьких экранов */
+@media screen and (max-width: $size_screen_width_small) {
+  .feature__icon {
+    font-size: 2.2em;
+  }
+  .feature__text {
+    margin-left: 3.8em;
+  }
+  .feature__text>h3 {
+    margin-top: 0.6em;
+  }
+}
 @media screen and (max-width: $size_screen_width_smallest) {
   .feature__icon {
     display: none;
