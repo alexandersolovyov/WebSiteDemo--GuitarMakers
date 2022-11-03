@@ -73,6 +73,11 @@ gulp.task('js', function () {
     .pipe(uglify())
     .pipe(gulp.dest('dist/js/'));
 });
+gulp.task('js-libs', function () {
+  return gulp.src('javascript/ie8fix.js')
+    .pipe(uglify())
+    .pipe(gulp.dest('dist/js/'));
+});
 /*====================
  * Fonts
  *====================
@@ -165,5 +170,6 @@ gulp.task('images', gulp.series(['image-recode', 'image-resize', 'favicon']));
 // Build for development
 gulp.task('build', gulp.parallel(['dev-css', 'html', 'dev-js']));
 //Full build for release
-gulp.task('release', gulp.parallel(['css', 'html', 'images', 'fonts', 'js']));
+gulp.task('release', gulp.parallel(['css', 'html', 'images', 'fonts', 'js',
+                                    'js-libs']));
 
