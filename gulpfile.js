@@ -38,7 +38,6 @@ gulp.task('css', function() {
                outputStyle: 'compressed'     // uncomment to turn on compression
     }))
     .pipe(postcss(plugins))
-    .pipe(rename({suffix: '.min'}))
     //.on('error', console.error.bind(console)) // error output to console
     .pipe(gulp.dest('./dist/css/'));
 });
@@ -48,7 +47,6 @@ gulp.task('dev-css', function() {
     .pipe(sass({
                errorLogToConsole: true,
     }))
-    .pipe(rename({suffix: '.min'}))
     //.on('error', console.error.bind(console)) // error output to console
     .pipe(gulp.dest('./dist/css/'));
 });
