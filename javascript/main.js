@@ -31,6 +31,8 @@ window.site = (function () {
     // Если элемент меню выделялся - становится true
     var isMenuHighlighted = false;
 
+    // Захватываем кнопку формы "отправить"
+    var sendBtn = document.getElementById('submit');
     // Захватываем элементы меню
     var menuBtn = document.getElementById('nav-menu__button');
     var menu = document.getElementById('nav-menu');
@@ -150,6 +152,16 @@ window.site = (function () {
     };
     // При скролле подсвечиваем пункт меню
     window.onscroll = throttle(highlightMainRef, 100);
+    // При нажатии на кнопке "Отправить" показываем сообщение
+    sendBtn.onclick = function (ev) {
+      // Предотвратить отправку
+      if (typeof ev.preventDefault === 'function') {
+        ev.preventDefault();
+      }else {
+        event.returnValue = false;
+      }
+      window.alert('К сожалению, это лишь демонстрационная страница и она не может ничего отправить.');
+    };
   };
     
   return site;
