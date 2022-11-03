@@ -111,6 +111,14 @@ gulp.task('image-resize', function() {
     }))
     .pipe(gulp.dest('dist/images'));
 });
+gulp.task('favicon', function() {
+  return gulp.src('raw-images/favicon.png')
+    .pipe(gm(function(gmfile) {
+      return gmfile.resize(32, 32);
+    }))
+    .pipe(imagemin())
+    .pipe(gulp.dest('dist/images'));
+});
 /*======================
  * Clean up dist folder
  *======================
@@ -153,7 +161,7 @@ gulp.task('server-stop', function(done) {
  *================================
  */
 // Make images
-gulp.task('images', gulp.series(['image-recode', 'image-resize']));
+gulp.task('images', gulp.series(['image-recode', 'image-resize', 'favicon']));
 // Build for development
 gulp.task('build', gulp.parallel(['dev-css', 'html', 'dev-js']));
 //Full build for release
