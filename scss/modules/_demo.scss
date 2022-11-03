@@ -23,6 +23,9 @@
 .demo__text article+article {
   margin-top: 1.2em;
 }
+.demo__text li {
+  margin-top: 0.4em;
+}
 
 /* Увеличение экнана */
 @media screen and (min-width: $size_screen_width_big_plus) {
