@@ -2,7 +2,7 @@
 
 Сайт создан с целью повышения навыков создания сайтов. Результат можно
 посмотреть по
-(этой ссылке)[https://raw.githack.com/git https://github.com/alexandersolovyov/WebSiteDemo--GuitarMakers.git/dist_1/index.html].
+[этой ссылке](https://raw.githack.com/git https://github.com/alexandersolovyov/WebSiteDemo--GuitarMakers.git/dist_1/index.html).
 
 Это полностью завершённый сайт-визитка, но есть несколько нюансов:
 
