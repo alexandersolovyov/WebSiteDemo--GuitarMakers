@@ -57,11 +57,10 @@
 }
 @media screen and (max-width: $size_screen_width_smaller) {
   .price-card {
-    min-height: 11em;
+    min-height: auto;
   }
-}
-@media screen and (max-width: $size_screen_width_micro) {
-  .price-card {
-    min-height: 15em;
+  .price-card__price {
+    position: static;
+    margin-top: 1em;
   }
 }
