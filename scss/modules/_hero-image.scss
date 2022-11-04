@@ -14,7 +14,9 @@
   height: 100vh;
   /* Следующие 2 параметра должны быть равны размеру изображения */
   max-width: 800px;
-  max-height: 530px;
+  /* Это ограничение плохо влияет на узкие экраны мобильных
+   * устройств:
+   * max-height: 530px; */
   min-height: 18em;
   background-image: url("../images/guitar_shaded_bg-800x530.jpg");
   /*background: linear-gradient(to bottom, rgba(0,0,0,0.3),
