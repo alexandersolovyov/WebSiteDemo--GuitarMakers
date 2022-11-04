@@ -31,13 +31,15 @@
 /*
  * Маленькие экраны
  */
-@media screen and (max-width: $size_screen_width_micro) {
+@media screen and (max-width: $size_screen_width_mini) {
   .action-button {
     width: 100%;
   }
   .action-button>a {
     padding: 0.6em 1em;
   }
+}
+@media screen and (max-width: $size_screen_width_micro) {
   .action-button_form {
     padding: 0.6em 1.6em;
     font-size: 1em;
