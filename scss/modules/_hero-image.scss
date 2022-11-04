@@ -58,7 +58,8 @@
 }
 @media screen and (max-width: $size_screen_width_mini) {
   .hero-image__content {
-    padding: 0;
+    padding-top: 3.6em;
+    padding-bottom: 1em;
   }
 }
 @media screen and (max-width: $size_screen_width_mini)
