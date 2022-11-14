@@ -3,6 +3,8 @@
  */
 .feature {
   position: relative;
+  /* Make margins of inner headers stay inside: */
+  overflow: auto;
 }
 .feature+feature {
   margin-top: 2em;
