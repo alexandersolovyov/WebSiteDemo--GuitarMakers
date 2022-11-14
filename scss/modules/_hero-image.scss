@@ -29,6 +29,7 @@
 .hero-image__content {
   display: table-cell;
   padding: 3em;
+  padding-top: $size_page_header_height;
   vertical-align: middle;
   text-align: center;
   color: $color_white_text;
@@ -60,7 +61,7 @@
 }
 @media screen and (max-width: $size_screen_width_mini) {
   .hero-image__content {
-    padding-top: 3.6em;
+    padding-top: $size_page_header_height_small;
     padding-bottom: 1em;
   }
 }
