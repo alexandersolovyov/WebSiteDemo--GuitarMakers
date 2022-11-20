@@ -31,6 +31,11 @@
 /*
  * Маленькие экраны
  */
+@media screen and (max-width: $size_screen_width_smaller) {
+  .action-button {
+    margin-top: 0.8em;
+  }
+}
 @media screen and (max-width: $size_screen_width_mini) {
   .action-button {
     width: 100%;
