@@ -26,7 +26,7 @@
     <script type="text/javascript" src="js/main.js"></script>
   </head>
 
-  <body onload="window.site.main();">
+  <body>
     <!--[if lt IE 9]>
     <div id="ie8error" style="font-size:1.4em; color:red; text-align:center;
                               font-weight:bold;">
@@ -332,5 +332,8 @@
         document.getElementById('ie8error').setAttribute('style', 'display:none;');
       </script>
     <![endif]-->
+    <script>
+      window.site.main();
+    </script>
   </body>
 </html>
