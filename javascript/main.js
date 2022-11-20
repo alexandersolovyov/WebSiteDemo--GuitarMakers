@@ -79,6 +79,7 @@ window.site = (function () {
         var marker_class = 'is-nav-menu__link-active';
         // Берём позицию окна
         var win_pos = window.utils.getWindowOffset();
+        win_pos.middle = (win_pos.top + win_pos.bottom) / 2;
         // Начинаем с нижнего раздела-цели.
         // Если низ экрана ниже его верха - подсвечиваем пункт меню.
         var is_marked = false; // станет true если один элемент помечен
@@ -97,8 +98,8 @@ window.site = (function () {
           ref_el = getRefElement(anchorIds[i]);
           if (is_marked) { // уже помечено, дальше только убираем
             window.utils.removeClass(ref_el, marker_class);
-          // Если верх элемента выше верха окна - подсвечиваем пункт меню.
-          }else if (win_pos.top > (anchorPositions[anchorIds[i]] - 15)) {
+          // Если верх элемента выше середины окна - подсвечиваем пункт меню.
+          }else if (win_pos.middle > (anchorPositions[anchorIds[i]])) {
             window.utils.addClass(ref_el, marker_class);
             is_marked = true;
             isMenuHighlighted = true;
